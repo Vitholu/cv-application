@@ -28,7 +28,9 @@
   max-width: 220px;
 }
 
-
+.header-left-wrapper > form > * {
+  min-width: 160px;
+}
 
 .header-right {
   flex: 1;
