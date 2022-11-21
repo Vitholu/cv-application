@@ -1,0 +1,36 @@
+.header {
+  background-color: var(--teal-nine);
+  color: white;
+  display: flex;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  
+  gap: 1rem;
+  padding: 0rem 1rem;
+  flex: 4;
+}
+
+.header-left > h1 {
+  background-color: white;
+  color: var(--teal-ten);
+  padding: 1rem;
+  border-radius: 100%;
+}
+
+.header-left-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  max-height: 70px;
+  max-width: 220px;
+}
+
+
+
+.header-right {
+  flex: 1;
+  padding: .5rem 1rem;
+}

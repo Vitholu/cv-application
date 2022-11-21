@@ -1,0 +1,21 @@
+@import "./styles/header.css";
+@import "./styles/reset.css";
+
+:root {
+  --teal-one: #f0fdfa;
+  --teal-two: #ccfbf1;
+  --teal-three: #99f6e4;
+  --teal-four: #5eead4;
+  --teal-fifth: #2dd4bf;
+  --teal-six: #14b8a6;
+  --teal-seven: #0d9488;
+  --teal-eight: #0f766e;
+  --teal-nine: #115e59;
+  --teal-ten: #134e4a;
+}
+
+
+#root {
+  max-width: 800px;
+  margin: auto;
+}
