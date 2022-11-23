@@ -52,3 +52,33 @@
 .description {
   font-size: 13px;
 }
+
+/* Exp */
+
+.container-exp {
+  display: flex;
+  align-items: flex-start;
+}
+
+.left-exp {
+  flex: 1;
+}
+
+.left-exp > p {
+  margin: 1rem 0;
+}
+
+.right-exp {
+  align-self: flex-end;
+  flex: 3;
+}
+
+.exp-title {
+  margin: 1rem 0;
+}
+
+.bg-experience {
+  background-color: var(--teal-one);
+  border-top: 2px solid var(--teal-ten);
+  padding: 1rem;
+}
