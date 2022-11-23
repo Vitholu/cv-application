@@ -17,6 +17,11 @@ export class Header extends Component {
         two: false,
         textB: "",
       },
+      third: {
+        address: false,
+        three: false,
+        textC: "",
+      },
       value: ''
 		};
 
@@ -36,6 +41,10 @@ export class Header extends Component {
 			case '2':
 				this.setState({ textB: event.target.value });
         break;
+      
+      case '3':
+        this.setState({ textC: event.target.value });
+        break;
 
 
 			default:
@@ -51,6 +60,11 @@ export class Header extends Component {
 
     this.setState({ profession: false });
     this.setState({ two: false });
+
+
+    this.setState({ address: false });
+    this.setState({ three: false });
+
 		event.preventDefault();
 	}
 
@@ -66,6 +80,11 @@ export class Header extends Component {
           this.setState({ profession: true })
           this.setState({ two: true })
         break;
+
+      case '3':
+        this.setState({ address: true })
+        this.setState({ three: true })
+      break;
 
 			default:
 				break;
@@ -94,7 +113,15 @@ export class Header extends Component {
             />
           </label>)
           
-      
+        case "3":
+          return (<label>
+            <input
+              className={key}
+              type='text'
+              textA={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>)
         default:
           break;
       }
@@ -108,6 +135,9 @@ export class Header extends Component {
       
       case "2":
         return <h4 className='2'>{this.state.textB || 'Human Resource Manger'}</h4>;
+      
+      case "3":
+        return <p className='3'>{this.state.textC || "4759 Sunnydale Lane \n Plano, TX, 75071 \n email@youremail.com \n (469) 385-2948" }</p>;
       
       default:
         break;
@@ -134,10 +164,11 @@ export class Header extends Component {
               </div>
             </div>
             <div className='header-right'>
-              <p>
-                4759 Sunnydale Lane Plano, TX, 75071 email@youremail.com (469)
-                385-2948
-              </p>
+            <form onSubmit={this.handleSubmit}>
+                <p className='3' onClick={this.toggleActive}>
+                  {this.state.address ? this.TextInput("3") : this._NameContent("3")}
+                </p>
+          </form>
             </div>
           </div>
 		);
