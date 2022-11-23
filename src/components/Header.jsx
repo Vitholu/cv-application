@@ -22,6 +22,11 @@ export class Header extends Component {
         three: false,
         textC: "",
       },
+      fourth: {
+        description: false,
+        four: false,
+        textD: "",
+      },
       value: ''
 		};
 
@@ -46,6 +51,10 @@ export class Header extends Component {
         this.setState({ textC: event.target.value });
         break;
 
+      case '4':
+        this.setState({ textD: event.target.value });
+        break;  
+
 
 			default:
 				break;
@@ -53,7 +62,6 @@ export class Header extends Component {
 	}
 
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
 		this.setState({ name: false });
     this.setState({ one: false });
 
@@ -64,6 +72,9 @@ export class Header extends Component {
 
     this.setState({ address: false });
     this.setState({ three: false });
+
+    this.setState({ description: false })
+    this.setState({ four: false })
 
 		event.preventDefault();
 	}
@@ -84,6 +95,11 @@ export class Header extends Component {
       case '3':
         this.setState({ address: true })
         this.setState({ three: true })
+      break;
+
+      case '4':
+        this.setState({ description: true })
+        this.setState({ four: true })
       break;
 
 			default:
@@ -122,6 +138,16 @@ export class Header extends Component {
               onChange={this.handleChange}
             />
           </label>)
+
+        case "4":
+          return (<label>
+            <input
+              className={key}
+              type='text'
+              textA={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>)
         default:
           break;
       }
@@ -139,6 +165,9 @@ export class Header extends Component {
       case "3":
         return <p className='3'>{this.state.textC || "4759 Sunnydale Lane \n Plano, TX, 75071 \n email@youremail.com \n (469) 385-2948" }</p>;
       
+      case "4":
+        return <p className='4'>{this.state.textD || "Human resources generalist with 8 years of experience in HR, including hiring and terminating, disciplining employees and helping department managers improve employee performance. Worked with labor unions to negotiate compensation packages for workers. Organized new hire training initiatives as well as ongoing training to adhere to workplace safety standards. Worked with OSHA to ensure that all safety regulations are followed." }</p>;
+      
       default:
         break;
     }
@@ -147,6 +176,7 @@ export class Header extends Component {
 	render() {
 
 		return (
+      <>
       <div className='header'>
             <div className='header-left'>
               <h1>CC</h1>
@@ -164,13 +194,23 @@ export class Header extends Component {
               </div>
             </div>
             <div className='header-right'>
-            <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
                 <p className='3' onClick={this.toggleActive}>
                   {this.state.address ? this.TextInput("3") : this._NameContent("3")}
                 </p>
           </form>
             </div>
-          </div>
+      </div>
+
+
+      <div className="bg-color-desc">
+          <form onSubmit={this.handleSubmit}>
+                <p className='4 description' onClick={this.toggleActive}>
+                  {this.state.description ? this.TextInput("4") : this._NameContent("4")}
+                </p>
+          </form>
+      </div>
+      </>
 		);
 	}
 }

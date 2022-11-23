@@ -36,3 +36,19 @@
   flex: 1;
   padding: .5rem 1rem;
 }
+
+
+/* Description */
+
+.bg-color-desc {
+  min-height: 5rem;
+  background-color: var(--teal-one);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.description {
+  font-size: 13px;
+}
